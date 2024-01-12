@@ -40,6 +40,17 @@ function init() {
                 name: 'installation',
                 message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
             },
+            {
+                type: 'input',
+                name: 'usage',
+                message: 'Provide instructions and examples for use. Include screenshots as needed.re the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
+            },
+            {
+                type: 'list',
+                name: 'license',
+                message: 'Select the license for your project',
+                choices: ["Apache", "GNU General Public License", "MIT", "Creative Commons Zero"],
+            },
         ])
             // .then // ... set the answers to constants
             .then((answers) => {
