@@ -20,15 +20,17 @@ function generateMarkdown(answers) {
 
   ## License
   ${answers.license}
+  // TODO: work out badges
 
   ## Contributing
   ${answers.contributing}
+  // TODO: work out how to add a separate contributing doc
 
   ## Tests
   ${answers.tests}
 
   ## Questions
-  If you have any questions about this repository, contact me via email at ${answers.questions}
+  If you have any questions about this repository, contact me via email at ${answers.email}, or via github at github.com/${answers.github}
 `;
 
 }
