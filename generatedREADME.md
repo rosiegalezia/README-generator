@@ -1,7 +1,7 @@
-# ff
+# ss
 
   ## Description
-  aa
+  ff
 
   ## Table of Contents (Optional)
   
@@ -11,13 +11,13 @@
 - [License](#license)
 
   ## Installation
-  vv
+  aaaa
 
   ## Usage
-  dd
+  fds
 
   ## License
-  GNU General Public License
+  Produced under the MIT License
   // TODO: work out badges
 
   ## Contributing
@@ -25,7 +25,7 @@
   // TODO: work out how to add a separate contributing doc
 
   ## Tests
-  sfabaf
+  ss
 
   ## Questions
-  If you have any questions about this repository, contact me via email at vvvv, or via github at github.com/ss
+  If you have any questions about this repository, contact me via email at aaa, or via github at github.com/vadvwvgr

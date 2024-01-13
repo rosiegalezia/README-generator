@@ -19,7 +19,7 @@ function generateMarkdown(answers) {
   ${answers.usage}
 
   ## License
-  ${answers.license}
+  Produced under the ${answers.license}
   // TODO: work out badges
 
   ## Contributing

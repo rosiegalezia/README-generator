@@ -28,6 +28,8 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
+https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+
 List your collaborators, if any, with links to their GitHub profiles.
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
