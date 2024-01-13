@@ -1,7 +1,7 @@
-# ss
+# undefined
 
   ## Description
-  ff
+  undefined
 
   ## Table of Contents (Optional)
   
@@ -11,21 +11,10 @@
 - [License](#license)
 
   ## Installation
-  aaaa
+  undefined
 
   ## Usage
-  fds
+  undefined
 
   ## License
-  Produced under the MIT License
-  // TODO: work out badges
-
-  ## Contributing
-  true
-  // TODO: work out how to add a separate contributing doc
-
-  ## Tests
-  ss
-
-  ## Questions
-  If you have any questions about this repository, contact me via email at aaa, or via github at github.com/vadvwvgr
+  Produced under the 2

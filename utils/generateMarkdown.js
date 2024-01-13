@@ -19,10 +19,11 @@ function generateMarkdown(answers) {
   ${answers.usage}
 
   ## License
-  Produced under the ${answers.license}
+  Produced under the ${answers.license}`
+  badgeMD
   // TODO: work out badges
 
-  ## Contributing
+  `## Contributing
   ${answers.contributing}
   // TODO: work out how to add a separate contributing doc
 
