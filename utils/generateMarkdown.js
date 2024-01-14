@@ -19,7 +19,7 @@ function generateBadge(answers) {
   // get the index of the license selected in prompt
   const licenseIndex = answers.license
 
-  // access the same index from the array of 
+  // access the same index from the array of badges
   const badgeMD = badges[licenseIndex]
 
   return badgeMD
@@ -40,6 +40,7 @@ function contributing(answers) {
 }
 
 function displayLicenseName(answers) {
+  // display the name of the license selected rather than the value
   if (answers.license === 0) {
     return `Apache License 2.0`
   } else
@@ -82,7 +83,6 @@ function displayLicenseName(answers) {
 }
 
 function tableOfContents(answers){
-  console.log(answers.contents)
   if (answers.contents === true) {
     return `## Table of Contents
   
@@ -100,9 +100,11 @@ function tableOfContents(answers){
 function generateMarkdown(answers) {
   return `# ${answers.title}
 
+  ${generateBadge(answers)}
+
   ## Description
   ${answers.description}
-  
+
   ${tableOfContents(answers)}
   ## Installation
   ${answers.installation}
@@ -112,8 +114,6 @@ function generateMarkdown(answers) {
 
   ## License
   Produced under the ${displayLicenseName(answers)}.
-
-  ${generateBadge(answers)}
 
   ## Contributing
   ${contributing(answers)}

@@ -35,7 +35,6 @@ function init() {
                 type: 'input',
                 name: 'usage',
                 message: 'Please provide instructions and examples for use. You can include the file path to screenshots as needed.',
-                // TODO: add screenshots??
             },
             {
                 type: 'list',
