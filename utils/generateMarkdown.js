@@ -4,16 +4,16 @@ function generateBadge(answers) {
     '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
     '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
     '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    // '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)',
-    // '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
-    // '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
-    // '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)',
-    // '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)',
-    // '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)',
-    // '[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)',
-    // '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)',
-    // '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)',
-    // '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
+    '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)',
+    '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+    '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
+    '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)',
+    '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)',
+    '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)',
+    '[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)',
+    '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)',
+    '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)',
+    '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
   ]
 
   // get the index of the license selected in prompt
@@ -25,23 +25,18 @@ function generateBadge(answers) {
   return badgeMD
 }
 
-function defaultContributing(answers) {
+function contributing(answers) {
   if (answers.contributing === 'I want to use the default contributing guide') {
-    return `blah blah blah`
+  return `First off, thank you for considering contributing to ${answers.title}. It's people like you that make ${answers.title} such a great tool.
+    
+  ${answers.title} is an open source project and we love to receive contributions from our community — you! There are many ways to contribute, from writing tutorials or blog posts, improving the documentation, submitting bug reports and feature requests or writing code which can be incorporated into ${answers.title} itself.
+    
+  If you'd like to contribute, please contact me at ${answers.email}.`
   }
   else if (answers.contributing === 'I want to write my own contributing guide') {
-    return diyContributing(answers)
+    return answers.diyContributing
   } else
     return `N/A`
-}
-
-function diyContributing(answers) {
-  if (answers.contributing === 'I want to write my own contributing guide') {
-    return answers.diyContributing
-  }
-  // else {
-  //   return answers.contributing
-  // }
 }
 
 function displayLicenseName(answers) {
@@ -86,20 +81,29 @@ function displayLicenseName(answers) {
                           }
 }
 
+function tableOfContents(answers){
+  console.log(answers.contents)
+  if (answers.contents === true) {
+    return `## Table of Contents
+  
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Credits](#credits)
+    - [License](#license)
+    `
+  } else {
+    return ``
+  }
+}
+
 // function to generate markdown for README
 function generateMarkdown(answers) {
   return `# ${answers.title}
 
   ## Description
   ${answers.description}
-
-  ## Table of Contents (Optional)
   
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
+  ${tableOfContents(answers)}
   ## Installation
   ${answers.installation}
 
@@ -112,7 +116,7 @@ function generateMarkdown(answers) {
   ${generateBadge(answers)}
 
   ## Contributing
-  ${defaultContributing(answers)}
+  ${contributing(answers)}
 
   ## Tests
   ${answers.tests}

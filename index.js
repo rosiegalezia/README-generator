@@ -2,10 +2,6 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-const generateContributingGuidelines = require("./utils/generateContributingGuidelines");
-
-
-// TODO: add bottom bar?
 
 
 // function to initialize program
@@ -14,28 +10,33 @@ function init() {
     // array of questions for user
     const questions = [
         inquirer.prompt([
-            // {
-            //     type: 'input',
-            //     name: 'title',
-            //     message: 'What is your project title?',
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'description',
-            //     message: 'Please provide a short description explaining the what, why, and how of your project.',
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'installation',
-            //     message: 'What are the steps required to install your project? Please provide a step-by-step description of how to get the development environment running.',
-            //     // TODO: default?
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'usage',
-            //     message: 'Please provide instructions and examples for use. You can include the file path to screenshots as needed.',
-            //     // TODO: add screenshots??
-            // },
+            {
+                type: 'input',
+                name: 'title',
+                message: 'What is your project title?',
+            },
+            {
+                type: 'input',
+                name: 'description',
+                message: 'Please provide a short description explaining the what, why, and how of your project.',
+            },
+            {
+                type: 'confirm',
+                name: 'contents',
+                message: 'Would you like to include a Table of Contents in your README?',
+                default: 'Yes'
+            },
+            {
+                type: 'input',
+                name: 'installation',
+                message: 'What are the steps required to install your project? Please provide a step-by-step description of how to get the development environment running.',
+            },
+            {
+                type: 'input',
+                name: 'usage',
+                message: 'Please provide instructions and examples for use. You can include the file path to screenshots as needed.',
+                // TODO: add screenshots??
+            },
             {
                 type: 'list',
                 name: 'license',
@@ -99,7 +100,7 @@ function init() {
                 type: 'list',
                 name: 'contributing',
                 message: 'Would you like people to be able to contribute to your project?',
-                choices: ['I want to write my own contributing guide', 'I want to use the default contributing guide', 'I dont want people to contribute'],
+                choices: ['I want to write my own contributing guide', 'I want to use the default contributing guide', 'I do not want people to contribute'],
                 default: 'I want to use the default contributing guide',
             },
             {
@@ -108,21 +109,21 @@ function init() {
                 message: 'Please enter your contributing info',
                 when: (answers) => answers['contributing'] === 'I want to write my own contributing guide',
             },
-            // {
-            //     type: 'input',
-            //     name: 'tests',
-            //     message: 'Write tests for your application. Then provide examples on how to run them here.',
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'github',
-            //     message: 'Please provide your GitHub username, so users can contact you with any questions.',
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'email',
-            //     message: 'Please provide your email address, so users can contact you with any questions.',
-            // },
+            {
+                type: 'input',
+                name: 'tests',
+                message: 'Write tests for your application. Then provide examples on how to run them here.',
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: 'Please provide your GitHub username, so users can contact you with any questions.',
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Please provide your email address, so users can contact you with any questions.',
+            },
         ])
             // .then // ... set the answers to constants
             .then((answers) => {
@@ -146,23 +147,5 @@ function init() {
     ];
 }
 
-
 // function call to initialize program
 init();
-
-
-
-// TODO: fix format of if statement 
-
-// const wantsContributingGuide = answers.contributing
-
-// if (wantsContributingGuide) {
-// // call the write to file function
-// // if the output readme file doesn't exist, it will be generated automatically
-// const contributionGuidelines = generateContributingGuidelines(answers)
-
-// fs.writeFile('Contributing-guidelines.md', contributionGuidelines, (err) =>
-//     err ? console.error(err) : console.log('Success!')
-// );
-
-// }
