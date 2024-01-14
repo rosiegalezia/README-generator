@@ -29,9 +29,19 @@ function defaultContributing(answers) {
   if (answers.contributing === 'I want to use the default contributing guide') {
     return `blah blah blah`
   }
-  else {
-    return answers.contributing
+  else if (answers.contributing === 'I want to write my own contributing guide') {
+    return diyContributing(answers)
+  } else
+    return `N/A`
+}
+
+function diyContributing(answers) {
+  if (answers.contributing === 'I want to write my own contributing guide') {
+    return answers.diyContributing
   }
+  // else {
+  //   return answers.contributing
+  // }
 }
 
 function displayLicenseName(answers) {
@@ -50,30 +60,30 @@ function displayLicenseName(answers) {
           if (answers.license === 4) {
             return `BSD 3-clause 'New' or 'Revised' license`
           } else
-          if (answers.license === 5) {
-            return `Boost Software License 1.0`
-          } else
-          if (answers.license === 6) {
-            return `Creative Commons Zero v1.0 Universal`
-          } else
-          if (answers.license === 7) {
-            return `Eclipse Public License 2.0`
-          } else
-          if (answers.license === 8) {
-            return `GNU Affero General Public License v3.0`
-          } else
-          if (answers.license === 9) {
-            return `GNU General Public License v2.0`
-          } else
-          if (answers.license === 10) {
-            return `GNU Lesser General Public License v3.0`
-          } else
-          if (answers.license === 11) {
-            return `Mozilla Public License 2.0`
-          } else
-          if (answers.license === 12) {
-            return `The Unlicense Livense`
-          }
+            if (answers.license === 5) {
+              return `Boost Software License 1.0`
+            } else
+              if (answers.license === 6) {
+                return `Creative Commons Zero v1.0 Universal`
+              } else
+                if (answers.license === 7) {
+                  return `Eclipse Public License 2.0`
+                } else
+                  if (answers.license === 8) {
+                    return `GNU Affero General Public License v3.0`
+                  } else
+                    if (answers.license === 9) {
+                      return `GNU General Public License v2.0`
+                    } else
+                      if (answers.license === 10) {
+                        return `GNU Lesser General Public License v3.0`
+                      } else
+                        if (answers.license === 11) {
+                          return `Mozilla Public License 2.0`
+                        } else
+                          if (answers.license === 12) {
+                            return `The Unlicense Livense`
+                          }
 }
 
 // function to generate markdown for README

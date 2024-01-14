@@ -99,20 +99,15 @@ function init() {
                 type: 'list',
                 name: 'contributing',
                 message: 'Would you like people to be able to contribute to your project?',
-                choices: ['I want to write my own contributing guide', 'I want to use the default contributing guide', 'I dont want people to contribute']
+                choices: ['I want to write my own contributing guide', 'I want to use the default contributing guide', 'I dont want people to contribute'],
+                default: 'I want to use the default contributing guide',
             },
             {
-                name: 'diy-contributing',
+                name: 'diyContributing',
                 type: 'input',
                 message: 'Please enter your contributing info',
                 when: (answers) => answers['contributing'] === 'I want to write my own contributing guide',
             },
-            // {
-            //     name: 'default-contributing',
-            //     type: 'confirm',
-            //     message: 'Are you sure you want to use the default contributing info?',
-            //     when: (answers) => answers['contributing'] === 'I want to use the default contributing guide',
-            // },
             // {
             //     type: 'input',
             //     name: 'tests',
