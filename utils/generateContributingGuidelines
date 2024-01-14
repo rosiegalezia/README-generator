@@ -1,0 +1,16 @@
+function generateContributingGuidelines(answers) {
+  return `#Introduction
+  First off, thank you for considering contributing to ${answers.title}. It's people like you that make ${answers.title} such a great tool.
+
+  #Ground rules
+
+  #Getting started
+
+  #How to report a bug
+
+  #How to suggest a feature or enhancement
+
+  #Code review process
+
+  #Community
+  `}
