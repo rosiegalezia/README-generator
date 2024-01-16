@@ -85,11 +85,12 @@ function displayLicenseName(answers) {
 function tableOfContents(answers){
   if (answers.contents === true) {
     return `## Table of Contents
-  
+    
     - [Installation](#installation)
     - [Usage](#usage)
     - [Credits](#credits)
     - [License](#license)
+    
     `
   } else {
     return ``
@@ -106,6 +107,7 @@ function generateMarkdown(answers) {
   ${answers.description}
 
   ${tableOfContents(answers)}
+  
   ## Installation
   ${answers.installation}
 

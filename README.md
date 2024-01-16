@@ -3,7 +3,7 @@ A README.md generator command-line application created for the week 11 challenge
 
 ## Description
 
-This project is a command-line application that accepts user inputs, that can be used by developers to create meaningful READMEs. This project brough together the node.js and ES6 content learnt in week 11 of the 16-week Front-End Web Development Bootcamp. It was also my first time using a .gitignore file!
+This project is a command-line application that accepts user inputs, that can be used by developers to create meaningful READMEs. This project brough together the node.js and ES6 content learnt in week 11 of the 16-week Front-End Web Development Bootcamp. It was also my first time using a .gitignore file! The README created by the application is created in a file titled 'generatedREADME.md'.
 
 It meets all the outlined acceptance criteria:
  * When a user is prompted for information about the application repository then a high-quality, professional README.md is generated with the title, and 8 sections containing important information.
@@ -15,6 +15,12 @@ It meets all the outlined acceptance criteria:
  * When a user clicks on the links in the Table of Contents then they are taken to the corresponding section of the README.
  * Uses the inquirer package.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
 ## Installation
 
