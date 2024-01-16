@@ -85,13 +85,12 @@ function displayLicenseName(answers) {
 function tableOfContents(answers){
   if (answers.contents === true) {
     return `## Table of Contents
-    
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
-    
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
     `
+
   } else {
     return ``
   }

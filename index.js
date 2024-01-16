@@ -127,14 +127,6 @@ function init() {
             // .then // ... set the answers to constants
             .then((answers) => {
 
-                // const titleAnswer = answers.title
-                // const descriptionAnswer = answers.description
-                // const installationAnswer = answers.installation
-                // console.log(titleAnswer)
-                // console.log(descriptionAnswer)
-                // console.log(installationAnswer)
-
-
                 // call the write to file function
                 // if the output readme file doesn't exist, it will be generated automatically
                 const markdownGenerated = generateMarkdown(answers)
